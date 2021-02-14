@@ -10,8 +10,8 @@ const addTodoForm = document.querySelector('.todo-control'),
 
     let todoData = [];
 // получаю данные из localStorage в формате json и превращаю их в массив объектов
-if (localStorage.getItem(todo) !== null) {
-    let data = localStorage.getItem(todo, 'jsonTodo');
+if (localStorage.getItem('todo') !== null) {
+    let data = localStorage.getItem('todo');
     todoData = JSON.parse(data);
 } else {
     todoData = [
@@ -63,7 +63,7 @@ const render = function () {
 
         // перевод в json формат и запись в localStorage
         let jsonTodo = JSON.stringify(todoData);
-        localStorage.setItem(todo, jsonTodo);
+        localStorage.setItem('todo', jsonTodo);
     });
 };
 
